@@ -40,7 +40,7 @@ FROM
         AVG(price) AS avg_price
     FROM gold.fact_sales
     WHERE order_date IS NOT NULL
-    GROUP BY DATE_FORMAT(order_date, '%Y-01-01')
+    GROUP BY CAST(DATE_FORMAT(order_date, '%Y-01-01') AS DATE)
 ) AS t
 
 ORDER BY order_date;
