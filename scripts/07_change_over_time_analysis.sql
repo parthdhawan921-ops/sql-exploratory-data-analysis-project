@@ -36,7 +36,6 @@ ORDER BY
 
 
 -- Analyse sales performance by month
--- MySQL equivalent of DATETRUNC(month, order_date)
 SELECT
     DATE_FORMAT(order_date, '%Y-%m-01') AS order_date,
     SUM(sales_amount) AS total_sales,
@@ -49,7 +48,6 @@ ORDER BY DATE_FORMAT(order_date, '%Y-%m-01');
 
 
 -- Analyse sales performance using formatted Year-Month
--- MySQL equivalent of FORMAT(order_date, 'yyyy-MMM')
 SELECT
     DATE_FORMAT(order_date, '%Y-%b') AS order_date,
     SUM(sales_amount) AS total_sales,
